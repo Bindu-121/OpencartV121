@@ -31,7 +31,8 @@ import org.apache.logging.log4j.Logger;  //Log4j
 
 public class BaseClass {
 
-public static WebDriver driver;
+//public static WebDriver driver; //for capture screenshot make it static other wise remove static
+public WebDriver driver; 
 public Logger logger;  //Log4j
 public Properties p;
 	
@@ -53,7 +54,7 @@ public Properties p;
 			//os
 			if(os.equalsIgnoreCase("windows"))
 			{
-				capabilities.setPlatform(Platform.WIN11);
+				capabilities.setPlatform(Platform.WINDOWS);
 			}
 			else if(os.equalsIgnoreCase("linux"))
 			{
@@ -99,7 +100,7 @@ public Properties p;
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-		driver.get(p.getProperty("appURL2")); // reading url from properties file.
+		driver.get(p.getProperty("appURL")); // reading url from properties file.
 		driver.manage().window().maximize();
 	}
 	

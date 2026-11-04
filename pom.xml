@@ -4,74 +4,84 @@
   <artifactId>OpencartV121</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Force TestNG 7.7.1 across all downstream transient dependencies -->
+      <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.7.1</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <build>
-	 <pluginManagement>
-		 
-		 <plugins>
-			<plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-compiler-plugin</artifactId>
-	          <version>3.11.0</version>
-	      </plugin>
-	        
-	         <plugin>
-		          <groupId>org.apache.maven.plugins</groupId>
-		          <artifactId>maven-surefire-plugin</artifactId>
-		          <version>3.2.2</version>
-		          <configuration>
-					  <suiteXmlFiles>
-						  <suiteXmlFile>master.xml</suiteXmlFile>
-					  </suiteXmlFiles>
-				  </configuration>
-       		 </plugin>
-			 
-		 </plugins>
-		 
-	 </pluginManagement>
-	 
-	 
+     <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.2</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>Master.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+         </plugin>
+     </plugins>
  </build>
- 
- 
- 
+
   <dependencies>
-	  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
 	    <version>4.20.0</version>
 	</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi</artifactId>
-		    <version>5.2.5</version>
-		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>5.2.5</version>
+	</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi-ooxml</artifactId>
-		    <version>5.2.5</version>
-		</dependency>
-
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.2.5</version>
+	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-	<!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
-	
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-core</artifactId>
 	    <version>2.23.1</version>
-	  </dependency>
+	</dependency>
 
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-api</artifactId>
 	    <version>2.23.1</version>
-	 </dependency>
+	</dependency>
 
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
 	<dependency>
@@ -79,8 +89,6 @@
 	    <artifactId>log4j-slf4j-impl</artifactId>
 	    <version>2.23.1</version>
 	</dependency>
-
-
 		
 	<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 	<dependency>
@@ -93,11 +101,11 @@
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
-	    <version>7.8.0</version>
+	    <version>7.7.1</version>
 	    <scope>test</scope>
 	</dependency>
 	  
-	  	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 	<dependency>
 	    <groupId>commons-io</groupId>
 	    <artifactId>commons-io</artifactId>
@@ -117,9 +125,5 @@
 	    <artifactId>commons-email</artifactId>
 	    <version>1.6.0</version>
 	</dependency>
-
-	
   </dependencies>
-
-
 </project>

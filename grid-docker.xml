@@ -15,9 +15,9 @@
     <parameter name="browser" value="chrome"/>
      
     <classes>
-           <class name="testCases.TC001_AccountRegistrationTest"/> 
-     		<class name="testCases.TC002_LoginTest"/> 
-    </classes>
+          <class name="testCases.TC001_AccountRegistrationTest"/> 
+	      <class name="testCases.TC002_LoginTest"/>
+	  </classes>
   </test> 
   
  
@@ -27,9 +27,9 @@
     <parameter name="browser" value="firefox"/>
      
     <classes>
-            <class name="testCases.TC001_AccountRegistrationTest"/> 
-    		 <class name="testCases.TC002_LoginTest"/> 
-    </classes>
+	      <class name="testCases.TC_004_SearchProductTest" />
+		  <class name="testCases.TC_005_AddToCartPageTest" /> 
+	</classes>
   </test>
   
   
